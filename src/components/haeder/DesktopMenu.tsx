@@ -1,18 +1,21 @@
-import { Button, ButtonGroup } from "@mui/material";
+import Link from "next/link";
 
 function DesktopMenu() {
   return (
-    <ButtonGroup
-      variant="text"
-      aria-label="buttons group links"
-      sx={{ display: { xs: "none", md: "flex" } }}
-    >
-      <Button href="#text-buttons" color="primary">
-        En alquiler
-      </Button>
-      <Button href="#text-buttons">En venta</Button>
-      <Button href="#text-buttons">Buscador de agentes</Button>
-    </ButtonGroup>
+    <nav className="gap-4 hidden laptop:flex">
+      <Link className="nav-link" href="/">
+        Inicio
+      </Link>
+      <Link className="nav-link" href="/about">
+        Sobre Nosotros
+      </Link>
+      <Link className="nav-link" href="/contact">
+        Contacto
+      </Link>
+      <Link className="nav-link" href="/agents">
+        Agentes
+      </Link>
+    </nav>
   );
 }
 

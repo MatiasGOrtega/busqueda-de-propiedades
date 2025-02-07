@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${roboto.variable} antialiased`}>
+        <body className={`${roboto.variable} antialiased max-w-screen-desktop mx-auto`}>
           <AppRouterCacheProvider>
             <ThemeProvider theme={theme}>
               <Header />

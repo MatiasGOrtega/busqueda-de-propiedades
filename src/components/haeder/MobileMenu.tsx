@@ -1,45 +1,64 @@
 "use client";
 import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import React, { useState } from "react";
-import MenuIcon from '@mui/icons-material/Menu';
+import { Box, Divider, Drawer, List, ListItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 
 export default function MobileMenu() {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer =
+    (inOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+
+      setOpen(inOpen);
+    };
 
   return (
-    <div>
-      <Button
-        id="basic-button"
-        aria-controls={open ? "basic-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-        sx={{ display: { xs: "block", md: "none" } }}
-      >
+    <Box sx={{ display: { sm: "none" } }}>
+      <Button variant="text" color="inherit" onClick={toggleDrawer(true)}>
         <MenuIcon />
       </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
+      <Drawer
+        anchor="right"
+        color="warning"
+        variant="temporary"
         open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
+        onClose={toggleDrawer(false)}
       >
-        <MenuItem onClick={handleClose}>En alquiler</MenuItem>
-        <MenuItem onClick={handleClose}>En venta</MenuItem>
-        <MenuItem onClick={handleClose}>Buscador de agentes</MenuItem>
-      </Menu>
-    </div>
+        <Box
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <List>
+            {["Inicio", "Sobre Nosotros", "Contacto", "Agentes"].map((text) => (
+              <ListItem key={text}>
+                <Link className="nav-link w-[250px]" href="/">
+                  {text}
+                </Link>
+              </ListItem>
+            ))}
+          </List>
+          <Divider />
+          <List>
+            {["Iniciar sesión", "Registrarse"].map((text) => (
+              <ListItem key={text}>
+                <Link className="nav-link w-[250px]" href="/">
+                  {text}
+                </Link>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+    </Box>
   );
 }

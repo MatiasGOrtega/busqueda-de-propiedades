@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
+
+.nav-link {
+  @apply text-gray-700 hover:scale-105 font-medium transition-transform duration-300 ease-linear;
+}
