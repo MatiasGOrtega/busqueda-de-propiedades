@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "@/theme";
 import { ClerkProvider } from "@clerk/nextjs";
-import Header from "@/components/Header";
+import Header from "@/components/home/Header";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],

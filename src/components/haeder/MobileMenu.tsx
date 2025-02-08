@@ -22,7 +22,7 @@ export default function MobileMenu() {
     };
 
   return (
-    <Box sx={{ display: { sm: "none" } }}>
+    <Box className="block laptop:hidden">
       <Button variant="text" color="inherit" onClick={toggleDrawer(true)}>
         <MenuIcon />
       </Button>
