@@ -37,8 +37,8 @@ function SliderImagesEstate({ images }) {
           <div className="flex-[10]">
             <Image
               className="w-full h-[300px] tablet:h-[800px] object-cover rounded-lg"
-              width={1000}
-              height={800}
+              width={1260}
+              height={750}
               src={images[imageIndex]}
               alt=""
             />
@@ -59,9 +59,9 @@ function SliderImagesEstate({ images }) {
       )}
       <div className="flex-[3]">
         <Image
-          width={1000}
-          height={800}
-          className="w-full h-full object-cover rounded-lg cursor-pointer"
+          width={1260}
+          height={750}
+          className="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-80"
           src={images[0]}
           alt=""
           onClick={() => setImageIndex(0)}
@@ -70,9 +70,9 @@ function SliderImagesEstate({ images }) {
       <div className="flex-[1] flex flex-col justify-between gap-5">
         {images.slice(1).map((image, index) => (
           <Image
-            width={1000}
-            height={800}
-            className="h-[80px] mobile:h-[100px]"
+            width={1260}
+            height={750}
+            className="h-[80px] mobile:h-[100px] rounded-lg cursor-pointer hover:opacity-80"
             src={image}
             alt=""
             key={index}

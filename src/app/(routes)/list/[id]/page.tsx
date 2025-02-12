@@ -54,80 +54,82 @@ function DetailEstatePage() {
         </div>
       </div>
       <div className="flex-[2] bg-yellow-100">
-        <div className="wrapper">
-          <p className="title">General</p>
-          <div className="listVertical">
-            <div className="feature">
+        <div className="p-5 flex flex-col gap-2 tablet:px-5 tablet:py-0">
+          <p className="font-bold text-xl gap-2">General</p>
+          <div className="flex flex-col gap-5 py-5 px-2 bg-white rounded-lg">
+            <div className="flex items-center gap-2">
               <ConstructionIcon />
-              <div className="featureText">
-                <span>Utilities</span>
-                <p>Renter is responsible</p>
+              <div>
+                <span className="font-bold">Utilities</span>
+                <p className="text-sm">Renter is responsible</p>
               </div>
             </div>
-            <div className="feature">
+            <div className="flex items-center gap-2">
               <PetsIcon />
-              <div className="featureText">
-                <span>Pet Policy</span>
-                <p>Pets Allowed</p>
+              <div>
+                <span className="font-bold">Pet Policy</span>
+                <p className="text-sm">Pets Allowed</p>
               </div>
             </div>
-            <div className="feature">
+            <div className="flex items-center gap-2">
               <AttachMoneyIcon />
-              <div className="featureText">
-                <span>Property Fees</span>
-                <p>Must have 3x the rent in total household income</p>
+              <div>
+                <span className="font-bold">Property Fees</span>
+                <p className="text-sm">
+                  Must have 3x the rent in total household income
+                </p>
               </div>
             </div>
           </div>
-          <p className="title">Sizes</p>
-          <div className="sizes">
-            <div className="size">
+          <p className="font-bold text-xl">Room Sizes</p>
+          <div className="flex justify-between text-xs laptop:text-sm gap-2">
+            <div className="flex items-center gap-2 bg-white p-2 rounded">
               <AspectRatioIcon />
               <span>80 sqft</span>
             </div>
-            <div className="size">
+            <div className="flex items-center gap-2 bg-white p-2 rounded">
               <BedIcon />
               <span>2 beds</span>
             </div>
-            <div className="size">
+            <div className="flex items-center gap-2 bg-white p-2 rounded">
               <BathroomIcon />
               <span>1 bathroom</span>
             </div>
           </div>
-          <p className="title">Nearby Places</p>
-          <div className="listHorizontal">
-            <div className="feature">
+          <p className="font-bold text-xl gap-2">Nearby Places</p>
+          <div className="flex justify-between py-5 px-2 bg-white rounded-lg">
+            <div className="flex items-center gap-2">
               <SchoolIcon />
-              <div className="featureText">
-                <span>School</span>
-                <p>250m away</p>
+              <div>
+                <span className="font-bold">School</span>
+                <p className="text-sm">250m away</p>
               </div>
             </div>
-            <div className="feature">
+            <div className="flex items-center gap-2">
               <DirectionsBusIcon />
-              <div className="featureText">
-                <span>Bus Stop</span>
-                <p>100m away</p>
+              <div>
+                <span className="font-bold">Bus Stop</span>
+                <p className="text-sm">100m away</p>
               </div>
             </div>
-            <div className="feature">
+            <div className="flex items-center gap-2">
               <RestaurantIcon />
-              <div className="featureText">
-                <span>Restaurant</span>
-                <p>200m away</p>
+              <div>
+                <span className="font-bold">Restaurant</span>
+                <p className="text-sm">200m away</p>
               </div>
             </div>
           </div>
-          <p className="title">Location</p>
-          <div className="mapContainer">
+          <p className="font-bold text-xl gap-2">Location</p>
+          <div className="w-full h-52 z-0">
             <Map items={[singlePostData]} />
           </div>
-          <div className="buttons">
-            <button>
+          <div className="flex justify-between">
+            <button className="p-5 flex items-center gap-1 bg-white rounded cursor-pointer">
               <ChatIcon />
               Send a Message
             </button>
-            <button>
+            <button className="p-5 flex items-center gap-1 bg-white rounded cursor-pointer">
               <BookmarkBorderIcon />
               Save the Place
             </button>
